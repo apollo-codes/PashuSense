@@ -1,10 +1,26 @@
-<div align="center">
+ <div align="center">
 
 <img src="plogo.png" alt="PashuSense logo" width="120"/>
 
 # 🐄 PashuSense
 
 ### AI-Powered Cattle Breed Recognition & Farm Management Web App built with TensorFlow Lite, MobileNetV2, Flask & Docker
+
+---
+
+## 🏆 Smart India Hackathon 2025
+
+**Team Leader & Project Lead | Internal Hackathon Participant**
+
+Proud to have led the team behind **PashuSense**, an AI-powered cattle breed recognition and farm management platform developed for **Smart India Hackathon 2025**.
+
+Our project successfully reached the **Internal Hackathon stage**, providing us with an opportunity to present our solution, collaborate as a team, and work on a real-world problem in the agricultural and dairy sector.
+
+Although we did not advance to the next stage, the experience strengthened our technical, leadership, teamwork, and problem-solving skills.
+
+**Journey:** SIH 2025 → Internal Hackathon
+
+---
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://pashusense.onrender.com/)
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
@@ -63,22 +79,24 @@ The model is a custom-trained **MobileNetV2** classifier, exported to **TensorFl
 
 <img src="screenshots/my-farm.png" alt="My Farm" width="800"/>
 
+---
+
 ## ✨ Features
 
-* **🔍 Instant Breed Recognition:** Upload a cattle photo and get the predicted breed with a confidence score.
-* **🥛 Milk Production Estimates:** Typical annual yield for the identified breed.
-* **💚 Health Tips:** Breed-specific feeding and care guidance.
-* **🛡 Non-Cattle Rejection:** Confidence and top-2 margin gating rejects dogs, people, objects and blurry/unclear photos.
-* **🏡 My Farm:** Save identified cattle (photo, ID, breed) to a per-user farm record.
-* **🔐 Authentication:** Sign Up / Sign In / Logout flow with strict sign-in — an account must be registered before logging in. Farm records are kept per user.
-* **⚡ Lightweight Inference:** TFLite engine, single-threaded sync Gunicorn worker — no thread deadlocks or OOM freezes on free hosting.
-* **🧯 Graceful Errors:** Unsupported or corrupt image files return a friendly message instead of a server error.
+- **🔍 Instant Breed Recognition:** Upload a cattle photo and get the predicted breed with a confidence score.
+- **🥛 Milk Production Estimates:** Typical annual yield for the identified breed.
+- **💚 Health Tips:** Breed-specific feeding and care guidance.
+- **🛡 Non-Cattle Rejection:** Confidence and top-2 margin gating rejects dogs, people, objects and blurry/unclear photos.
+- **🏡 My Farm:** Save identified cattle (photo, ID, breed) to a per-user farm record.
+- **🔐 Authentication:** Sign Up / Sign In / Logout flow with strict sign-in — an account must be registered before logging in. Farm records are kept per user.
+- **⚡ Lightweight Inference:** TFLite engine, single-threaded sync Gunicorn worker — no thread deadlocks or OOM freezes on free hosting.
+- **🧯 Graceful Errors:** Unsupported or corrupt image files return a friendly message instead of a server error.
 
 ---
 
 ## 🧠 How It Works
 
-```
+```text
 Upload image
      │
      ▼
@@ -130,12 +148,15 @@ The engine prefers `cattle_breed_model.tflite` and automatically falls back to r
 ## 🔌 API Reference
 
 ### `GET /healthz`
+
 Returns server and engine status.
+
 ```json
 { "status": "healthy", "engine": "tflite" }
 ```
 
 ### `POST /predict`
+
 Multipart form upload with a `file` field (JPG / JPEG / PNG / WebP).
 
 ```bash
@@ -143,6 +164,7 @@ curl -X POST -F "file=@Cow.jpeg" https://pashusense.onrender.com/predict
 ```
 
 **Success**
+
 ```json
 {
   "breed": "Holstein Friesian cattle",
@@ -153,15 +175,18 @@ curl -X POST -F "file=@Cow.jpeg" https://pashusense.onrender.com/predict
 ```
 
 **Rejected / unreadable image**
+
 ```json
-{ "error": "This does not appear to be a clear cattle image (confidence 41.2% is low). Please upload a clear, close-up photo of a cow." }
+{
+  "error": "This does not appear to be a clear cattle image (confidence 41.2% is low). Please upload a clear, close-up photo of a cow."
+}
 ```
 
 ---
 
 ## 📂 Project Directory Structure
 
-```
+```text
 PashuSense
 │
 ├── app.py                          # Flask server + TFLite inference pipeline
@@ -245,21 +270,42 @@ The repo ships with a [`render.yaml`](render.yaml) blueprint:
 
 ## 🔮 Future Improvements
 
-* Server-side database with hashed-password authentication
-* More Indian and exotic breeds (Gir, Sahiwal, Murrah, Tharparkar…)
-* Disease and health-condition detection from images
-* Export farm records as CSV / PDF
-* Multi-language support (Hindi, Bengali, …)
+- Server-side database with hashed-password authentication
+- More Indian and exotic breeds (Gir, Sahiwal, Murrah, Tharparkar…)
+- Disease and health-condition detection from images
+- Export farm records as CSV / PDF
+- Multi-language support (Hindi, Bengali, …)
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 Project Leadership & Team
 
-**Souvik Sarkar** — [GitHub @Souvik686](https://github.com/Souvik686)
+### Subhojit Bag
+**Team Leader & Project Lead | Smart India Hackathon 2025**
+
+Led the team behind **PashuSense**, developed as part of our Smart India Hackathon 2025 journey.
+
+**Competition:** Smart India Hackathon 2025
+
+**Achievement:** Reached the Internal Hackathon stage.
+
+**Leadership Responsibilities:**
+- Team leadership and project coordination.
+- Project planning and development management.
+- Technical collaboration and problem-solving.
+- Coordinating team efforts throughout the hackathon journey.
+
+### Original Project Credits
+
+**Original Author / Repository Credit:** Souvik Sarkar — [@Souvik686](https://github.com/Souvik686)
+
+---
 
 <div align="center">
 
 ⭐ If you found this project useful, please consider giving it a star!
+
+*Built with ❤️ through teamwork, innovation, and continuous learning.*
 
 © 2025 PashuSense. All rights reserved.
 
